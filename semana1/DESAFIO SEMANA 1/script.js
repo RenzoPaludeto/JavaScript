@@ -7,18 +7,21 @@ function Cadastro() {
         senha: document.getElementById("SENHA").value
     }
 
-    if(usuario.idade >= 18) {
-        document.getElementById('output').innerHTML = 'sucesso'
+   
+
+    if(!usuario.nome || !usuario.sobrenome || !usuario.idade || !usuario.email || !usuario.senha){
+        document.getElementById('output').innerHTML = 'Erro! <br> Certifique-se de ter preenchido todos os dados pedidos'
         return;
-    }else(!usuario.nome || !usuario.sobrenome || !usuario.idade || !usuario.email || !usuario.senha || usuario.idade < 18); {
-        document.getElementById('error').innerHTML = 'erro'
-        
     }
+
+    if(usuario.idade < 18) {
+        document.getElementById('output').innerHTML = 'Erro! <br> A idade minima de cadastro e 18 anos'
+        return;
+    }
+
+    document.getElementById('output').innerHTML = `Sucesso! <br> Seja bem vindo ${usuario.nome} ${usuario.sobrenome}`
+
 }
-
-
-
-
 
 
 
