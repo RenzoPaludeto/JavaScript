@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de tarefas</title>
+    <script src="script.js"></script>
+</head>
+<body>
+    <input type="text" id="Tarefa" placeholder="Insira a tarefa">
+    <select id="Prioridade">
+        <option value="Alta">Alta</option>
+        <option value="Media">Media</option>
+        <option value="Baixa">Baixa</option>
+    </select>
+    <input 
+    type="text" 
+    placeholder="Data de inicio" 
+    onfocus="this.type='date'" 
+    onblur="if (!this.value) this.type='text'"
+    id="Inicio">
+    <input 
+        type="text" 
+        placeholder="Data de conclusao" 
+        onfocus="this.type='date'" 
+        onblur="if (!this.value) this.type='text'"
+        id="Conclusao">
+    <button type="submit" onclick="GerarTarefa()">Submit</button>
+
+    <h2>Lista de Tarefas</h2>
+    <ul id="Lista"></ul>
+    <div id="output"></div>
+    
+</body>
+</html>
